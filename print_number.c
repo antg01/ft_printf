@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:47:00 by angerard          #+#    #+#             */
-/*   Updated: 2024/05/07 15:36:11 by angerard         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:43:10 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ static int	print_pos_num(unsigned long num)
 	count = 0;
 	while (i > 0)
 	{
-		i = i - 1;
+		i--;
 		ft_putchar(num_buffer[i]);
-		count = count + 1;
+		count++;
 	}
 	return (count);
 }

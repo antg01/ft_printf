@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:47:28 by angerard          #+#    #+#             */
-/*   Updated: 2024/05/07 09:40:10 by angerard         ###   ########.fr       */
+/*   Updated: 2024/05/09 12:45:17 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	print_hex(unsigned long long num, char *base)
 	count = 0;
 	while (i > 0)
 	{
-		i = i - 1;
+		i--;
 		ft_putchar(hex_buffer[i]);
-		count = count + 1;
+		count++;
 	}
 	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:23:31 by angerard          #+#    #+#             */
-/*   Updated: 2024/05/07 15:40:38 by angerard         ###   ########.fr       */
+/*   Updated: 2024/05/09 15:34:52 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,9 @@ static size_t	spf_handler(va_list args, const char c)
 		count += convert_pointer(va_arg(args, void *));
 	else if (c == '%')
 		count += ft_putchar('%');
+	else
+		return (-1);
 	return (count);
-}
-
-char	*ft_strchr(const char *s, int c)
-{
-	while ((char)c != *s)
-	{
-		if (!*s)
-			return (0);
-		s++;
-	}
-	return ((char *)s);
 }
 
 int	ft_printf(const char *str, ...)
@@ -52,23 +43,21 @@ int	ft_printf(const char *str, ...)
 	size_t	i;
 	size_t	count;
 	va_list	args;
-	char	*spf_format;
 
+	if (!str)
+		return (-1);
 	i = 0;
 	count = 0;
 	va_start(args, str);
-	spf_format = "cspdiuxX%";
 	while (str[i])
 	{
-		if (str[i] == '%' && ft_strchr(spf_format, str[i + 1]))
+		if (str[i] == '%')
 		{
 			count += spf_handler(args, str[i + 1]);
 			i++;
 		}
 		else
-		{
 			count += ft_putchar(str[i]);
-		}
 		i++;
 	}
 	va_end(args);
