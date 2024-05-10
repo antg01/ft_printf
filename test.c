@@ -1,12 +1,43 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-#define ARG "%"
+#define ARG "  %"
 
 int	main(void)
 {
-	printf("\nres ft_printf: %d\n", ft_printf(ARG));
-	printf("\ndst printf: %d\n", printf(ARG));
+	char *s2 = "test";
+
+	printf("res1: %d\n", ft_printf(ARG));
+	printf("\n");
+	printf("res2: %d\n", printf(ARG));
+
+	// ft_printf("%c%c%c", 'a', '\t', 'b');
+	// printf("\n");
+	// printf("%c%c%c", 'a', '\t', 'b');
+
+	// ft_printf("%cc%cc%c", 'a', '\t', 'b');
+	// printf("\n");
+	// printf("%cc%cc%c", 'a', '\t', 'b');
+
+	// ft_printf("%cs%cs%c", 'c', 'b', 'a');
+	// printf("\n");
+	// printf("%cs%cs%c", 'c', 'b', 'a');
+
+	// ft_printf(" %c %c %c ", '0', 0, '1');
+	// printf("\n");
+	// printf(" %c %c %c ", '0', 0, '1');
+
+	// ft_printf(" %s %s %s %s %s", " - ", "", "4", "", s2);
+	// printf("\n");
+	// printf(" %s %s %s %s %s", " - ", "", "4", "", s2);
+
+	// ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
+	// printf("\n");
+	// printf(" %p %p ", LONG_MIN, LONG_MAX);
+
+	// ft_printf(" %p %p ", 0, 0);
+	// printf("\n");
+	// printf(" %p %p ", 0, 0);
 }
 
 // #include "ft_printf.h"
