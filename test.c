@@ -1,12 +1,17 @@
 #include "ft_printf.h"
 #include <stdio.h>
 
-#define ARG "%"
+// #define ARG "%"
 
 int	main(void)
 {
-	printf("\nres ft_printf: %d\n", ft_printf(ARG));
-	printf("\ndst printf: %d\n", printf(ARG));
+	int n = 214748364;
+	// void *n = NULL;
+	// printf("\nres ft_printf: %d\n", ft_printf(ARG));
+	// printf("\ndst printf: %d\n", printf(ARG));
+
+	printf("\nres ft_printf: %d\n", ft_printf("\nres: %d", n));
+	printf("\nres printf: %d\n", printf("\nres: %d", n));
 }
 
 // #include "ft_printf.h"
