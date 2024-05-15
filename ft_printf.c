@@ -6,11 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:23:31 by angerard          #+#    #+#             */
-<<<<<<< HEAD
 /*   Updated: 2024/05/15 12:37:31 by angerard         ###   ########.fr       */
-=======
-/*   Updated: 2024/05/10 12:06:32 by angerard         ###   ########.fr       */
->>>>>>> 614e7c88e09fdfa6be5efcfd7ef96799862eac7d
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +33,6 @@ static size_t	spf_handler(va_list args, const char c)
 		count += convert_pointer(va_arg(args, void *));
 	else if (c == '%')
 		count += ft_putchar('%');
-<<<<<<< HEAD
-=======
-	else
-		count += ft_putchar(c);
->>>>>>> 614e7c88e09fdfa6be5efcfd7ef96799862eac7d
 	return (count);
 }
 
@@ -69,18 +60,12 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[i])
 	{
-<<<<<<< HEAD
-=======
-		// if (str[i] == '%' || (str[i + 1] == ' '
-		// 	&& !ft_strchr(spf_format, str[i + 1])))
-		// 	return (count);
->>>>>>> 614e7c88e09fdfa6be5efcfd7ef96799862eac7d
 		if (str[i] == '%' && is_in_str(spf_format, str[i + 1]))
 		{
 			count += spf_handler(args, str[i + 1]);
 			i++;
 		}
-		else if (str[i] != '%')
+		else
 			count += ft_putchar(str[i]);
 		i++;
 	}
