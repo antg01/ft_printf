@@ -6,7 +6,7 @@
 /*   By: angerard <angerard@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 10:23:31 by angerard          #+#    #+#             */
-/*   Updated: 2024/05/15 12:37:31 by angerard         ###   ########.fr       */
+/*   Updated: 2024/05/15 18:23:48 by angerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,10 @@ static size_t	spf_handler(va_list args, const char c)
 
 static int	is_in_str(const char *s, int c)
 {
-	while ((char)c != *s)
-	{
-		if (!*s)
-			return (0);
+	while ((char)c != *s && *s != '\0')
 		s++;
-	}
+	if (!*s)
+		return (0);
 	return (1);
 }
 
@@ -65,7 +63,7 @@ int	ft_printf(const char *str, ...)
 			count += spf_handler(args, str[i + 1]);
 			i++;
 		}
-		else
+		else if (str[i] != '%')
 			count += ft_putchar(str[i]);
 		i++;
 	}
